@@ -3,7 +3,6 @@
 //  weather-App-Example
 //
 //  Created by ITRMG on 2016-26-03.
-//  Copyright © 2016 cts. All rights reserved.
 //
 
 import Foundation

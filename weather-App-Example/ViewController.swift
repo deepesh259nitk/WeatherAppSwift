@@ -2,8 +2,6 @@
 //  ViewController.swift
 //  weather-App-Example
 //
-//  Created by CTS on 3/25/16.
-//  Copyright © 2016 cts. All rights reserved.
 //
 
 import UIKit
@@ -28,19 +26,29 @@ class ViewController: UIViewController, WeatherServiceDelegate {
         
     }
     
-    // Mark :- Weather Service Delegate
+    // Mark :- Weather Service Delegate Methods
     
     func setWeather(weather: Weather) {
         
         print("**** set weather")
         print("city :\(weather.cityName) temp:\(weather.temp) description:\(weather.description)")
        
+        //let formatter = NSNumberFormatter()
+        //formatter.stringFromNumber(<#T##number: NSNumber##NSNumber#>)
         //cityLabel.text = weather.cityName
         tempLabel.text = "\(weather.temp)"
         descLabel.text = weather.description
         cityButton.setTitle(weather.cityName, forState: .Normal)
         cloudImage.image = UIImage(named: weather.icon)
         cloudsLabel.text = "Clouds : \(weather.clouds)%"
+    }
+    
+    func weatherErrorWithMessage(message:String){
+       
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        alert.addAction(ok)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     

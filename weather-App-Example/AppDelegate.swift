@@ -2,8 +2,6 @@
 //  AppDelegate.swift
 //  weather-App-Example
 //
-//  Created by CTS on 3/25/16.
-//  Copyright © 2016 cts. All rights reserved.
 //
 
 import UIKit
