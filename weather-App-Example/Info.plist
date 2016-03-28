@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysWhenInUseUsageDecription</key>
+	<string>May be we use your location to fetch your weather</string>
+	<key>NSLocationAlwaysUsageDecription</key>
+	<string>App would like to use your location for weather</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

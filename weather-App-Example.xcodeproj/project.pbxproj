@@ -40,6 +40,7 @@
 		48C4E13E1CA7F0B900296DB7 /* Cloudy Rain 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 48C4E1281CA7F0B900296DB7 /* Cloudy Rain 2.png */; };
 		48C4E13F1CA7F0B900296DB7 /* Cloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = 48C4E1291CA7F0B900296DB7 /* Cloudy.png */; };
 		48C4E1401CA7F0B900296DB7 /* Sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 48C4E12A1CA7F0B900296DB7 /* Sun.png */; };
+		48C4E1431CA9198900296DB7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C4E1421CA9198900296DB7 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		48C4E1281CA7F0B900296DB7 /* Cloudy Rain 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cloudy Rain 2.png"; sourceTree = "<group>"; };
 		48C4E1291CA7F0B900296DB7 /* Cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cloudy.png; sourceTree = "<group>"; };
 		48C4E12A1CA7F0B900296DB7 /* Sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sun.png; sourceTree = "<group>"; };
+		48C4E1421CA9198900296DB7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C4E1431CA9198900296DB7 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +132,7 @@
 		4867B1E41CA53C8C0057D9D1 = {
 			isa = PBXGroup;
 			children = (
+				48C4E1421CA9198900296DB7 /* CoreLocation.framework */,
 				4867B1EF1CA53C8C0057D9D1 /* weather-App-Example */,
 				4867B2071CA53C8D0057D9D1 /* weather-App-ExampleTests */,
 				4867B2121CA53C8D0057D9D1 /* weather-App-ExampleUITests */,

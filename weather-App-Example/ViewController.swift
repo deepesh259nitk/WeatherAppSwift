@@ -5,10 +5,12 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController, WeatherServiceDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, WeatherServiceDelegate {
 
     let weatherservice = WeatherService()
+    let locationManager = CLLocationManager()
     
     
     @IBOutlet weak var cloudsLabel: UILabel!
@@ -25,6 +27,37 @@ class ViewController: UIViewController, WeatherServiceDelegate {
         openCityAlert()
         
     }
+    
+    // MARK: Location
+    
+    func getGPSLocation() {
+        print("Starting location Manager")
+        locationManager.startUpdatingLocation()
+    }
+    
+    // 6 Add delegate methods
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+        // Get weather for location
+        print("Did update To Location")
+        print(newLocation)
+        locationManager.stopUpdatingLocation()
+    }
+    
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("Did update locations")
+        print(locations)
+        //self.weatherservice
+        //self.weatherService.getWeatherForLocation(locations[0])
+        locationManager.stopUpdatingLocation()
+    }
+    
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("location error \(error) \(error.userInfo)")
+    }
+    
+
     
     // Mark :- Weather Service Delegate Methods
     
@@ -64,11 +97,16 @@ class ViewController: UIViewController, WeatherServiceDelegate {
             message: "Enter City Name",
             preferredStyle: UIAlertControllerStyle.Alert)
         
+        //create location Action.
+        let location = UIAlertAction(title: "Use Location", style: .Default) { (action: UIAlertAction) -> Void in
+            //
+            self.getGPSLocation()
+        }
+        
         //Create Cancel Action 
         let cancel = UIAlertAction(title:"Cancel",
             style: UIAlertActionStyle.Cancel ,
             handler: nil)
-        
         
         alert.addAction(cancel)
         
@@ -89,7 +127,7 @@ class ViewController: UIViewController, WeatherServiceDelegate {
         }
         
         alert.addAction(ok)
-        
+        alert.addAction(location)
         // Add text field. 
         
         alert.addTextFieldWithConfigurationHandler { (textField:UITextField) -> Void in
@@ -107,6 +145,7 @@ class ViewController: UIViewController, WeatherServiceDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.weatherservice.delegate = self
+        
         
     }
 

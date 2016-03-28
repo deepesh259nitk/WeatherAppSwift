@@ -6,7 +6,7 @@
 
 import Foundation
 
-//Name of the class doesn't have to match the class name always 
+//Name of the class doesn't have to match the class name always
 
 protocol WeatherServiceDelegate {
     
