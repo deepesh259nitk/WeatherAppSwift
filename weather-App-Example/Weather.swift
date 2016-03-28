@@ -11,11 +11,12 @@ struct Weather {
     
     //let are constants and cannot change. 
     
+    
     let cityName : String
-    let temp : Double
     let description : String
     let icon : String
     let clouds : Double
+    let temp : Double
     
     init(cityName:String, temp:Double, description:String, icon:String, clouds:Double) {
         self.cityName = cityName
@@ -24,4 +25,12 @@ struct Weather {
         self.icon = icon
         self.clouds = clouds
     }
+    
+    var tempC : Double {
+        get{
+            //return self.temp * 9/5 * 32
+            return temp - 273.15
+        }
+    }
+    
 }

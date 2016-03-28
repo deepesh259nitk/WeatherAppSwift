@@ -33,10 +33,15 @@ class ViewController: UIViewController, WeatherServiceDelegate {
         print("**** set weather")
         print("city :\(weather.cityName) temp:\(weather.temp) description:\(weather.description)")
        
-        //let formatter = NSNumberFormatter()
-        //formatter.stringFromNumber(<#T##number: NSNumber##NSNumber#>)
-        //cityLabel.text = weather.cityName
-        tempLabel.text = "\(weather.temp)"
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        formatter.maximumFractionDigits = 1
+        formatter.minimumFractionDigits = 1
+        
+        let f = formatter.stringFromNumber(weather.tempC)!
+        
+        tempLabel.text = "\(f)"
+        
         descLabel.text = weather.description
         cityButton.setTitle(weather.cityName, forState: .Normal)
         cloudImage.image = UIImage(named: weather.icon)
